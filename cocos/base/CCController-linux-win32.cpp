@@ -37,6 +37,7 @@ THE SOFTWARE.
 
 NS_CC_BEGIN
 
+#pragma optimize("g", off) // Disable global optimizations.
 class CC_DLL ControllerImpl
 {
 	public:
@@ -4971,7 +4972,7 @@ Controller::~Controller()
 	delete _keyEvent;
 	delete _axisEvent;
 }
-
+#pragma optimize("", on) // resets the optimizations to those that you specified with the /O compiler option
 
 NS_CC_END
 
